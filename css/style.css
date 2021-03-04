@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gridRowsD2: 10;
+}
+
+body {
+  background: linear-gradient(90deg, black 20%, hsl(0, 60%, 60%));
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 500px);
+  /* Row height alternates between full width and half width(after we move the objects) */
+  grid-template-rows: repeat(var(--gridRowsD2), 500px 250px);
+  /* If you're using gap need to add half of it to the margin when translating the element */
+  gap: 20px;
+}
+
+figcaption {
+  display: none;
+}
+
+.gallery img {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.even-row {
+  /* 1/4 image height */
+  margin-top: -125px;
+  /* 1/2 image width + 1/2 the gap*/
+  margin-left: 260px;
+}
