@@ -4,7 +4,7 @@ const populateGallery = () => {
   // Get the gallery element so we can populate it
   const gallery = document.querySelector('.gallery');
   
-  for (let i = 0 ; i < 30 ; i++ ) {
+  for (let i = 0 ; i < 50 ; i++ ) {
     // insert the properties of each objects inside the array into the appropriate HTML field.
     gallery.innerHTML += `
        <figure>

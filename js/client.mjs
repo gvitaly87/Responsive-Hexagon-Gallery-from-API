@@ -12,6 +12,8 @@ const adjustGrid = (cols) => {
   const figureList = document.querySelectorAll('figure');
   const rows = Math.ceil( figureList.length / cols ); 
 
+  document.querySelector(':root').style.setProperty("--gridRowsD2", Math.ceil( rows / 2 ));
+
   for ( let i = 0 ; i < rows ; i++ ) {
     for ( let j = 0 ; j < cols; j++ ) {
       const figCount = i * cols + j;
