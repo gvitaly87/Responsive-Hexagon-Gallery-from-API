@@ -13,10 +13,11 @@ const adjustGrid = (cols) => {
   const rows = Math.ceil( figureList.length / cols ); 
 
   document.querySelector(':root').style.setProperty("--gridRowsD2", Math.ceil( rows / 2 ));
-
+  
+  //used a variable for cell count inside figureList
+  let figCount = 0;
   for ( let i = 0 ; i < rows ; i++ ) {
     for ( let j = 0 ; j < cols; j++ ) {
-      const figCount = i * cols + j;
       // only need to adjust the even rows using class even-row 
       if( i % 2 == 0 ) {
         if (figureList[figCount].classList.contains('even-row')){
@@ -25,6 +26,7 @@ const adjustGrid = (cols) => {
       } else {
         figureList[figCount].classList.add('even-row');
       }
+      figCount++;
     }
   }
 };
